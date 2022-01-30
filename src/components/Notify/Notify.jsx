@@ -3,9 +3,9 @@ import logo from '../../assets/logo.png'
 
 const Notify = () => {
     navigator.setAppBadge(42).then(() => {
-        window.alert("The badge was added");
+        console.log("The badge was added");
     }).catch(e => {
-        window.alert("Error displaying the badge");
+        console.log("Error displaying the badge");
     });
     if ("Notification" in window) {
         window.alert("The Notifications API is supported");
