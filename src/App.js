@@ -1,5 +1,7 @@
 import React from 'react'
 import './App.css'
+import logo from './assets/logo.png'
+import Notify from './components/Notify/Notify'
 
 function App() {
     return (
@@ -11,6 +13,8 @@ function App() {
             <div>
                 final exam chtobi ponyat' nakonetc
             </div>
+            <button id={'notifications'}>hello</button>
+            <Notify />
         </div>
     )
 }
