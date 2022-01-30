@@ -18,7 +18,6 @@ const Notify = () => {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
                 window.alert("The user accepted");
-                const notification = new Notification("Hello World!");
             }
         });
     }
