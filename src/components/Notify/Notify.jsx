@@ -21,12 +21,12 @@ const Notify = () => {
             }
         });
     }
-    if (Notification.permission === "granted") {
-        const notification = new Notification("ArtWay", {
-            body: "Добавлена новая комната!",
-            icon: logo,
-        });
-    }
+    // if (Notification.permission === "granted") {
+    //     const notification = new Notification("ArtWay", {
+    //         body: "Добавлена новая комната!",
+    //         icon: logo,
+    //     });
+    // }
     const rightNow = () => {
         if (Notification.permission === "granted") {
             const notification = new Notification("ArtWay", {
