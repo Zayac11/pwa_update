@@ -1,6 +1,6 @@
 {
-  "short_name": "Pwa update",
-  "name": "Check PWA update name",
+  "short_name": "Pwa short",
+  "name": "Full name is here",
   "description": "Progressive Web App manifest description",
   "icons": [
     {
@@ -20,7 +20,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
   "background_color": "#ADD8E6"
 }
