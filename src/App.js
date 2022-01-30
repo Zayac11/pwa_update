@@ -8,6 +8,9 @@ function App() {
             <div>
                 text v div
             </div>
+            <div>
+                final exam chtobi ponyat' nakonetc
+            </div>
         </div>
     )
 }
