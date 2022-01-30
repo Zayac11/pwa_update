@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Pwa update",
+  "name": "Check PWA update name",
+  "description": "Progressive Web App manifest description",
   "icons": [
     {
       "src": "favicon.ico",
