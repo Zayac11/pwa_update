@@ -69,4 +69,33 @@ self.addEventListener('message', (event) => {
     }
 });
 
+self.registration.showNotification("Your content is ready", {
+    body: "Your content is ready to be viewed. View it now?",
+    icon: "/assets/logo.png",
+    actions: [
+        {
+            action: "view-content",
+            title: "Yes"
+        },
+        {
+            action: "go-home",
+            title: "No"
+        }
+    ]
+})
+
+self.addEventListener('notificationclick', event => {
+    // Close the notification.
+    event.notification.close();
+
+    // React to the action.
+    if (event.action === 'view-content') {
+        console.log("view-content action was clicked");
+    } else if (event.action === 'go-home') {
+        console.log("go-home action was clicked");
+    } else {
+        console.log("main body of the notification was clicked");
+    }
+}, false);
+
 // Any other custom service worker logic can go here.
