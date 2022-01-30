@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import logo from '../../assets/logo.png'
 
 const Notify = () => {
@@ -7,10 +7,35 @@ const Notify = () => {
     }).catch(e => {
         console.error("Error displaying the badge", e);
     });
+    if ("Notification" in window) {
+        console.log("The Notifications API is supported");
+    }
+    let button = useRef(null)
+    const listener = () => {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                console.log("The user accepted");
+                const notification = new Notification("Hello World!");
+            }
+        });
+    }
+    if (Notification.permission === "granted") {
+        const notification = new Notification("ArtWay", {
+            body: "Добавлена новая комната!",
+            icon: logo,
+        });
+    }
+    useEffect(() => {
+        button.current.addEventListener("click", listener);
+
+        return () => {
+            button.current.removeEventListener("click", listener);
+        }
+    })
     return (
         <div>
             nothing
-            <button>alo</button>
+            <button ref={button}>alo</button>
         </div>
     )
 }
