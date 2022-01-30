@@ -3,18 +3,21 @@ import logo from '../../assets/logo.png'
 
 const Notify = () => {
     navigator.setAppBadge(42).then(() => {
-        console.log("The badge was added");
+        window.alert("The badge was added");
     }).catch(e => {
-        console.error("Error displaying the badge", e);
+        window.alert("Error displaying the badge");
     });
     if ("Notification" in window) {
-        console.log("The Notifications API is supported");
+        window.alert("The Notifications API is supported");
+    }
+    else {
+        window.alert("The Notifications API isn't supported");
     }
     let button = useRef(null)
     const listener = () => {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
-                console.log("The user accepted");
+                window.alert("The user accepted");
                 const notification = new Notification("Hello World!");
             }
         });
@@ -24,6 +27,24 @@ const Notify = () => {
             body: "Добавлена новая комната!",
             icon: logo,
         });
+    }
+    const rightNow = () => {
+        if (Notification.permission === "granted") {
+            const notification = new Notification("ArtWay", {
+                body: "Добавлена новая комната!",
+                icon: logo,
+            });
+        }
+    }
+    const after = () => {
+        setTimeout(() => {
+            if (Notification.permission === "granted") {
+                const notification = new Notification("ArtWay", {
+                    body: "Добавлена новая комната!",
+                    icon: logo,
+                });
+            }
+        }, 5000)
     }
     useEffect(() => {
         button.current.addEventListener("click", listener);
@@ -36,6 +57,12 @@ const Notify = () => {
         <div>
             nothing
             <button ref={button}>alo</button>
+            <div>
+                <button onClick={() => rightNow()}>right now</button>
+            </div>
+            <div>
+                <button onClick={() => after()}>after 5 sec</button>
+            </div>
         </div>
     )
 }
