@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.556909e5.chunk.css",
-    "main.js": "/static/js/main.559e1a86.chunk.js",
-    "main.js.map": "/static/js/main.559e1a86.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.0e3ea446.js",
-    "runtime-main.js.map": "/static/js/runtime-main.0e3ea446.js.map",
-    "static/js/2.46faff16.chunk.js": "/static/js/2.46faff16.chunk.js",
-    "static/js/2.46faff16.chunk.js.map": "/static/js/2.46faff16.chunk.js.map",
-    "static/js/3.222befab.chunk.js": "/static/js/3.222befab.chunk.js",
-    "static/js/3.222befab.chunk.js.map": "/static/js/3.222befab.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.c33f4e5cc77b68803f1d5a988f932e69.js": "/precache-manifest.c33f4e5cc77b68803f1d5a988f932e69.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.556909e5.chunk.css.map": "/static/css/main.556909e5.chunk.css.map",
-    "static/js/2.46faff16.chunk.js.LICENSE.txt": "/static/js/2.46faff16.chunk.js.LICENSE.txt"
+    "main.css": "/pwa_update/static/css/main.556909e5.chunk.css",
+    "main.js": "/pwa_update/static/js/main.aa27750a.chunk.js",
+    "main.js.map": "/pwa_update/static/js/main.aa27750a.chunk.js.map",
+    "runtime-main.js": "/pwa_update/static/js/runtime-main.4a30eb79.js",
+    "runtime-main.js.map": "/pwa_update/static/js/runtime-main.4a30eb79.js.map",
+    "static/js/2.46faff16.chunk.js": "/pwa_update/static/js/2.46faff16.chunk.js",
+    "static/js/2.46faff16.chunk.js.map": "/pwa_update/static/js/2.46faff16.chunk.js.map",
+    "static/js/3.222befab.chunk.js": "/pwa_update/static/js/3.222befab.chunk.js",
+    "static/js/3.222befab.chunk.js.map": "/pwa_update/static/js/3.222befab.chunk.js.map",
+    "index.html": "/pwa_update/index.html",
+    "precache-manifest.d8976cb15525968d38af241fcfb516d9.js": "/pwa_update/precache-manifest.d8976cb15525968d38af241fcfb516d9.js",
+    "service-worker.js": "/pwa_update/service-worker.js",
+    "static/css/main.556909e5.chunk.css.map": "/pwa_update/static/css/main.556909e5.chunk.css.map",
+    "static/js/2.46faff16.chunk.js.LICENSE.txt": "/pwa_update/static/js/2.46faff16.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0e3ea446.js",
+    "static/js/runtime-main.4a30eb79.js",
     "static/js/2.46faff16.chunk.js",
     "static/css/main.556909e5.chunk.css",
-    "static/js/main.559e1a86.chunk.js"
+    "static/js/main.aa27750a.chunk.js"
   ]
 }
