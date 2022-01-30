@@ -4,7 +4,7 @@ import './App.css'
 function App() {
     return (
         <div className='container'>
-            Что-то с чем-то
+            text text text
         </div>
     )
 }
