@@ -2,18 +2,20 @@ import React, {useEffect, useRef} from 'react'
 import logo from '../../assets/logo.png'
 
 const Notify = () => {
-    navigator.setAppBadge(42).then(() => {
-        console.log("The badge was added");
-    }).catch(e => {
-        console.log("Error displaying the badge");
-    });
+    // navigator.setAppBadge(42).then(() => {
+    //     console.log("The badge was added");
+    // }).catch(e => {
+    //     console.log("Error displaying the badge");
+    // });
     if ("Notification" in window) {
-        window.alert("The Notifications API is supported");
+        // window.alert("The Notifications API is supported");
     }
     else {
         window.alert("The Notifications API isn't supported");
     }
     let button = useRef(null)
+    if ('serviceWorker' in navigator) {
+    }
     const listener = () => {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
@@ -29,17 +31,36 @@ const Notify = () => {
     // }
     const rightNow = () => {
         if (Notification.permission === "granted") {
-            const notification = new Notification("ArtWay", {
-                body: "Добавлена новая комната!",
-                icon: logo,
-            });
+            const options = {
+                body: "Добавлена новая комнатаss!",
+                icon: "/images/jason-leung-HM6TMmevbZQ-unsplash.jpg",
+                vibrate: [200, 100, 200],
+                tag: "new-product",
+                image: logo,
+                badge: "https://spyna.it/icons/android-icon-192x192.png",
+                actions: [{ action: "Detail", title: "View", icon: logo }]
+            }
+            navigator.serviceWorker.ready.then(e => {debugger})
+            debugger
+            navigator.serviceWorker.ready.then(
+                function (serviceWorker) {
+                    serviceWorker.showNotification('ArtWay', options)
+                        .then (e => {
+                            debugger
+                        })
+                }
+            )
+            // const notification = new Notification("ArtWay", {
+            //     body: "Добавлена новая комната!",
+            //     icon: logo,
+            // });
         }
     }
     const after = () => {
         setTimeout(() => {
             if (Notification.permission === "granted") {
                 const notification = new Notification("ArtWay", {
-                    body: "Добавлена новая комната!",
+                    body: "Добавлена новая комната спустя 5 секунд",
                     icon: logo,
                 });
             }
