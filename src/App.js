@@ -5,7 +5,7 @@ import Notify from './components/Notify/Notify'
 function App() {
     return (
         <div className='container'>
-            fix
+            Обновилось
             <Notify />
         </div>
     )
