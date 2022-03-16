@@ -1,5 +1,5 @@
 // Scripts for firebase and firebase messaging
-importScripts('https://www.gstatic.com/firebasejs/9.6.8/firebase-app-compat.j');
+importScripts('https://www.gstatic.com/firebasejs/9.6.8/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/9.6.8/firebase-messaging-compat.js');
 
 // Initialize the Firebase app in the service worker by passing the generated config
@@ -26,5 +26,5 @@ messaging.onBackgroundMessage(function(payload) {
         body: payload.notification.body,
     };
 
-    return self.registration.showNotification(notificationTitle, notificationOptions);
+    // self.registration.showNotification(notificationTitle, notificationOptions);
 })

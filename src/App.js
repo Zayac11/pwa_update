@@ -9,8 +9,6 @@ function App() {
     const [isTokenFound, setTokenFound] = useState(false);
     const [notification, setNotification] = useState({ title: "", body: "" });
     getTokenProject(setTokenFound)
-        .then(obj => console.log(obj))
-        .catch(e => console.log('token error:', e))
 
     onMessageListener()
         .then((payload) => {
@@ -23,7 +21,7 @@ function App() {
         .catch((err) => console.log("failed: ", err));
     return (
         <div className='container'>
-            update2
+            update3
             {isTokenFound && <h1> Notification permission enabled 👍🏻 </h1>}
             {!isTokenFound && <h1> Need notification permission ❗️ </h1>}
             {/*<Notify />*/}

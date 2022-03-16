@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+/public/200.html
+
 # production
 /build
 
