@@ -4,6 +4,28 @@ import {getToken, onMessage} from 'firebase/messaging';
 import {getMessaging, onBackgroundMessage} from 'firebase/messaging/sw';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+export function registerFirebase() {
+    if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('./firebase-messaging-sw.js')
+                .then(function(registration) {
+                    console.log('Registration successful, scope is:', registration.scope);
+                }).catch(function(err) {
+                console.log('Service worker registration failed, error:', err);
+            });
+        });
+    }
+}
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./firebase-messaging-sw.js')
+        .then(function(registration) {
+            console.log('Registration successful, scope is:', registration.scope);
+        }).catch(function(err) {
+        console.log('Service worker registration failed, error:', err);
+    });
+}
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -18,22 +40,24 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// console.log(app)
+console.log(app)
 const messaging = getMessaging(app)
 
 export const getTokenProject = (setTokenFound) => {
-    return getToken(messaging,{vapidKey: 'BDGYA-Pd4RQl-w12n5U9HArh0bO4q5ai3j3AR_1VX813-dbaAiu5VJCv03Pohb4xcC0K4-57m6JDax6jchGkhA8'}).then((currentToken) => {
-        if (currentToken) {
-            console.log('current token for client: ', currentToken);
-            setTokenFound(true);
-            // Track the token -> client mapping, by sending to backend server
-            // show on the UI that permission is secured
-        } else {
-            console.log('No registration token available. Request permission to generate one.');
-            setTokenFound(false);
-            // shows on the UI that permission is required
-        }
-    }).catch((err) => {
+    return getToken(messaging,{vapidKey: 'BDGYA-Pd4RQl-w12n5U9HArh0bO4q5ai3j3AR_1VX813-dbaAiu5VJCv03Pohb4xcC0K4-57m6JDax6jchGkhA8'})
+        .then((currentToken) => {
+            if (currentToken) {
+                console.log('current token for client: ', currentToken);
+                setTokenFound(true);
+                // Track the token -> client mapping, by sending to backend server
+                // show on the UI that permission is secured
+            } else {
+                console.log('No registration token available. Request permission to generate one.');
+                setTokenFound(false);
+                // shows on the UI that permission is required
+            }
+        })
+        .catch((err) => {
         console.log('An error occurred while retrieving token. ', err);
         // catch error while creating client token
     })
