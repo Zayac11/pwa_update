@@ -41,7 +41,6 @@ const Notify = () => {
                 actions: [{ action: "Detail", title: "View", icon: logo }]
             }
             navigator.serviceWorker.ready.then(e => {debugger})
-            debugger
             navigator.serviceWorker.ready.then(
                 function (serviceWorker) {
                     serviceWorker.showNotification('ArtWay', options)
