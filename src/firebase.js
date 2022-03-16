@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from "firebase/app";
-import {getToken, onMessage, getMessaging} from 'firebase/messaging';
+import {getToken, onMessage} from 'firebase/messaging';
+import {getMessaging, onBackgroundMessage} from 'firebase/messaging/sw';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -17,7 +18,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const messaging = getMessaging()
+// console.log(app)
+const messaging = getMessaging(app)
 
 export const getTokenProject = (setTokenFound) => {
     return getToken(messaging,{vapidKey: 'BDGYA-Pd4RQl-w12n5U9HArh0bO4q5ai3j3AR_1VX813-dbaAiu5VJCv03Pohb4xcC0K4-57m6JDax6jchGkhA8'}).then((currentToken) => {
@@ -37,9 +39,13 @@ export const getTokenProject = (setTokenFound) => {
     })
 }
 
-export const onMessageListener = () =>
-    new Promise((resolve) => {
-        onMessage(messaging, (payload) => {
-            resolve(payload);
-        });
-    });
+// export const onMessageListener = () =>
+//     new Promise((resolve) => {
+//         onMessage(messaging, (payload) => {
+//             resolve(payload);
+//         });
+//     });
+
+onMessage(messaging, (payload) => {
+    console.log('Message received. ', payload);
+});
