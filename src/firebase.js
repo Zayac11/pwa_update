@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from "firebase/app";
-import {getToken} from 'firebase/messaging';
+import {getToken, onMessage, getMessaging} from 'firebase/messaging';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -17,9 +17,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const messaging = getMessaging(app)
 
 export const getTokenProject = (setTokenFound) => {
-    return getToken({vapidKey: 'GENERATED_MESSAGING_KEY'}).then((currentToken) => {
+    return getToken(messaging,{vapidKey: 'GENERATED_MESSAGING_KEY'}).then((currentToken) => {
         if (currentToken) {
             console.log('current token for client: ', currentToken);
             setTokenFound(true);
@@ -35,3 +36,10 @@ export const getTokenProject = (setTokenFound) => {
         // catch error while creating client token
     })
 }
+
+export const onMessageListener = () =>
+    new Promise((resolve) => {
+        onMessage(messaging, (payload) => {
+            resolve(payload);
+        });
+    });
