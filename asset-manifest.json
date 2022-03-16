@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/pwa_update/static/css/main.f1f837a1.chunk.css",
-    "main.js": "/pwa_update/static/js/main.ba854b76.chunk.js",
-    "main.js.map": "/pwa_update/static/js/main.ba854b76.chunk.js.map",
-    "runtime-main.js": "/pwa_update/static/js/runtime-main.7b60bbfe.js",
-    "runtime-main.js.map": "/pwa_update/static/js/runtime-main.7b60bbfe.js.map",
-    "static/js/2.0e19c8b4.chunk.js": "/pwa_update/static/js/2.0e19c8b4.chunk.js",
-    "static/js/2.0e19c8b4.chunk.js.map": "/pwa_update/static/js/2.0e19c8b4.chunk.js.map",
-    "static/js/3.973f652f.chunk.js": "/pwa_update/static/js/3.973f652f.chunk.js",
-    "static/js/3.973f652f.chunk.js.map": "/pwa_update/static/js/3.973f652f.chunk.js.map",
+    "main.js": "/pwa_update/static/js/main.c3905634.chunk.js",
+    "main.js.map": "/pwa_update/static/js/main.c3905634.chunk.js.map",
+    "runtime-main.js": "/pwa_update/static/js/runtime-main.ff70ef6e.js",
+    "runtime-main.js.map": "/pwa_update/static/js/runtime-main.ff70ef6e.js.map",
+    "static/js/2.14d2b8ca.chunk.js": "/pwa_update/static/js/2.14d2b8ca.chunk.js",
+    "static/js/2.14d2b8ca.chunk.js.map": "/pwa_update/static/js/2.14d2b8ca.chunk.js.map",
+    "static/js/3.80b3cc05.chunk.js": "/pwa_update/static/js/3.80b3cc05.chunk.js",
+    "static/js/3.80b3cc05.chunk.js.map": "/pwa_update/static/js/3.80b3cc05.chunk.js.map",
     "index.html": "/pwa_update/index.html",
-    "precache-manifest.2b7badd6074a89d3c9f8f06572c4a487.js": "/pwa_update/precache-manifest.2b7badd6074a89d3c9f8f06572c4a487.js",
+    "precache-manifest.187cadb7c1e365f64a858e49ddb794a5.js": "/pwa_update/precache-manifest.187cadb7c1e365f64a858e49ddb794a5.js",
     "service-worker.js": "/pwa_update/service-worker.js",
     "static/css/main.f1f837a1.chunk.css.map": "/pwa_update/static/css/main.f1f837a1.chunk.css.map",
-    "static/js/2.0e19c8b4.chunk.js.LICENSE.txt": "/pwa_update/static/js/2.0e19c8b4.chunk.js.LICENSE.txt",
+    "static/js/2.14d2b8ca.chunk.js.LICENSE.txt": "/pwa_update/static/js/2.14d2b8ca.chunk.js.LICENSE.txt",
     "static/media/logo.png": "/pwa_update/static/media/logo.f920c3a5.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7b60bbfe.js",
-    "static/js/2.0e19c8b4.chunk.js",
+    "static/js/runtime-main.ff70ef6e.js",
+    "static/js/2.14d2b8ca.chunk.js",
     "static/css/main.f1f837a1.chunk.css",
-    "static/js/main.ba854b76.chunk.js"
+    "static/js/main.c3905634.chunk.js"
   ]
 }
