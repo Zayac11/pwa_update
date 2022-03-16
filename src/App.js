@@ -11,6 +11,7 @@ function App() {
 
     return (
         <div className='container'>
+            update
             {isTokenFound && <h1> Notification permission enabled 👍🏻 </h1>}
             {!isTokenFound && <h1> Need notification permission ❗️ </h1>}
             <Notify />

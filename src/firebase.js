@@ -17,10 +17,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const messaging = getMessaging(app)
+const messaging = getMessaging()
 
 export const getTokenProject = (setTokenFound) => {
-    return getToken(messaging,{vapidKey: 'GENERATED_MESSAGING_KEY'}).then((currentToken) => {
+    return getToken(messaging,{vapidKey: 'BDGYA-Pd4RQl-w12n5U9HArh0bO4q5ai3j3AR_1VX813-dbaAiu5VJCv03Pohb4xcC0K4-57m6JDax6jchGkhA8'}).then((currentToken) => {
         if (currentToken) {
             console.log('current token for client: ', currentToken);
             setTokenFound(true);
