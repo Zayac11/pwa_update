@@ -1,30 +1,17 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from "firebase/app";
 import {getToken, onMessage} from 'firebase/messaging';
-import {getMessaging, onBackgroundMessage} from 'firebase/messaging/sw';
+import {getMessaging} from 'firebase/messaging/sw';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-export function registerFirebase() {
-    if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-            navigator.serviceWorker.register('./firebase-messaging-sw.js')
-                .then(function(registration) {
-                    console.log('Registration successful, scope is:', registration.scope);
-                }).catch(function(err) {
-                console.log('Service worker registration failed, error:', err);
-            });
-        });
-    }
-}
-
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./firebase-messaging-sw.js')
-        .then(function(registration) {
-            console.log('Registration successful, scope is:', registration.scope);
-        }).catch(function(err) {
-        console.log('Service worker registration failed, error:', err);
-    });
-}
+// if ('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('./firebase-messaging-sw.js')
+//         .then(function(registration) {
+//             console.log('Registration successful, scope is:', registration.scope);
+//         }).catch(function(err) {
+//         console.log('Service worker registration failed, error:', err);
+//     });
+// }
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -70,6 +57,9 @@ export const getTokenProject = (setTokenFound) => {
 //         });
 //     });
 
-onMessage(messaging, (payload) => {
-    console.log('Message received. ', payload);
-});
+export const onMessageListener = () =>
+    new Promise((resolve) => {
+        onMessage(messaging, (payload) => {
+            resolve(payload);
+        });
+    });
