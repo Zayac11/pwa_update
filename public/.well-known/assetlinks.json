@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "ru.zayacz.pwaupdate",
+            "sha256_cert_fingerprints": [
+                "2D:29:C0:0E:6A:3D:F5:14:BA:28:D9:49:D8:50:3A:5C:78:78:5E:A4:94:FB:22:3E:10:6F:D3:F2:EA:1B:52:D9"
+            ]
+        }
+    }
+]

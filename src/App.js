@@ -21,10 +21,10 @@ function App() {
         .catch((err) => console.log("failed: ", err));
     return (
         <div className='container'>
-            update3
+            update12
             {isTokenFound && <h1> Notification permission enabled 👍🏻 </h1>}
             {!isTokenFound && <h1> Need notification permission ❗️ </h1>}
-            {/*<Notify />*/}
+            <Notify />
         </div>
     )
 }

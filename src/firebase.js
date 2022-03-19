@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import {initializeApp} from "firebase/app";
-import {getToken, onMessage} from 'firebase/messaging';
+import {getToken, onMessage, isSupported} from 'firebase/messaging';
 import {getMessaging} from 'firebase/messaging/sw';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -31,6 +31,10 @@ console.log(app)
 const messaging = getMessaging(app)
 
 export const getTokenProject = (setTokenFound) => {
+
+    isSupported().then(e => console.log('resolve', e))
+        .catch(err => console.log('reject', err))
+
     return getToken(messaging,{vapidKey: 'BDGYA-Pd4RQl-w12n5U9HArh0bO4q5ai3j3AR_1VX813-dbaAiu5VJCv03Pohb4xcC0K4-57m6JDax6jchGkhA8'})
         .then((currentToken) => {
             if (currentToken) {
